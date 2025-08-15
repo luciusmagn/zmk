@@ -19,7 +19,7 @@ jobs:
         with:
           token: ${{ secrets.ZMK_RELEASE_PLEASE_TOKEN }}
           target-branch: ${{ github.ref_name }}
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: ${{ steps.release.outputs.release_created }}
       - name: create major, minor branch
         if: ${{ steps.release.outputs.release_created && steps.release.outputs.patch == '0' }}
